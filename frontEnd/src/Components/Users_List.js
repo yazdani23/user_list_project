@@ -17,6 +17,15 @@ class Users_List extends Component {
           console.log(error);
         })
     }
+    componentDidUpdate(){
+      axios.get('http://localhost:4000/user/list')
+        .then(response => {
+          this.setState({ user: response.data });
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    }
     tabRow(){
       return this.state.user.map(function(object, i){
           return <User obj={object} key={i} />;
@@ -26,7 +35,7 @@ class Users_List extends Component {
     render() {
       return (
         <div>
-          <h3 align="center">User List</h3>
+          <h3 align="center">Users List</h3>
           <table className="table table-striped mt-4" >
             <thead>
               <tr>

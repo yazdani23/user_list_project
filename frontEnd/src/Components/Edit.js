@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Edit extends Component {
+
   constructor(props) {
     super(props);
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
@@ -13,6 +14,7 @@ class Edit extends Component {
       last_name: ''
     }
   }
+  
   componentDidMount() {
     axios.get('http://localhost:4000/user/edit/'+this.props.match.params.id)
         .then(response => {
@@ -60,7 +62,7 @@ class Edit extends Component {
                     <input 
                       type="text" 
                       className="form-control" 
-                      value={this.state.First_name}
+                      value={this.state.first_name}
                       onChange={this.onChangeFirstName}
                       />
                 </div>
@@ -68,7 +70,7 @@ class Edit extends Component {
                     <label>Last Name: </label>
                     <input type="text" 
                       className="form-control"
-                      value={this.state.Last_name}
+                      value={this.state.last_name}
                       onChange={this.onChangeLastName}
                       />
                 </div>
