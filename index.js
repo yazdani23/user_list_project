@@ -1,1 +1,0 @@
-window.location.replace("https://github.com/sorayaf23/user_list_project/tree/master/frontEnd/public");
